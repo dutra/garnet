@@ -1,0 +1,9 @@
+class StaticPagesController < ApplicationController
+  def home
+    @photos = Photo.all
+  end
+
+  def hobbies
+  end
+  
+end

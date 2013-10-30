@@ -1,0 +1,7 @@
+<div class="span3">
+  <li>
+    <%= link_to photo do %>
+    <%= image_tag photo.file.url(:thumb) %>
+    <% end %>
+  </li>
+</div>

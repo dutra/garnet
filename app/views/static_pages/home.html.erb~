@@ -1,0 +1,89 @@
+<% provide(:title, 'Home') %>
+
+<div class="main-section">
+
+  <div class="row">
+
+    <div class="span7">
+      <div id="myCarousel" class="carousel slide">
+
+        <div class="carousel-inner">
+          <div class="item active">
+            <%= link_to @photo do %>
+            <%= image_tag @photos[3].file.url(:carousel) %>
+            <% end %>
+            <div class="carousel-caption">
+              <h4>Parallel Universe</h4>
+              <p>Party with Fenway</p>
+            </div>
+          </div>
+          <div class="item">
+            <%= link_to @photo do %>
+            <%= image_tag @photos[1].file.url(:carousel) %>
+            <% end %>
+            <div class="carousel-caption">
+              <h4>House Dinner!</h4>
+              <p>Last weekend we went out for house dinner and got very yummy food!</p>
+            </div>
+          </div>
+
+          <div class="item">
+            <%= link_to @photo do %>
+            <%= image_tag @photos[0].file.url(:carousel) %>
+            <% end %>
+            <div class="carousel-caption">
+              <h4>Blizzard!</h4>
+              <p>Lots of snow!</p>
+            </div>
+          </div>
+        </div>
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+      </div>
+
+
+    </div>
+
+    <div class="span5">
+      <div class="">
+        <h1>Hello there. We are <span class="emph">Fenway House</span>.<br/> <small></small></h1>
+        Te sed nihil exerci, ut delenit copiosae signiferumque nam. Mea in consequat accommodare. Ex eirmod copiosae mea, eius doming appareat nec ut, te mea aliquam mandamus dignissim. Dicam feugait quo ut, mei ad nibh legimus cotidieque, cu mei etiam graecis abhorreant. Nec odio tacimates praesent no, iisque aeterno dolorem sea ea. Has ei illum praesent, eu duo dicam aliquando instructior.
+
+
+	Donec sollicitudin nisl sed enim molestie ultrices. Nam eu purus sed turpis pretium commodo. Donec non nulla adipiscing, laoreet tellus nec, iaculis nisl. Morbi ac tempor velit. 
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="main-section">
+
+
+  <h3 class="title-box">Recent News</h3>
+  <br>Lorem ipsum dolor sit amet, vero libris ea per
+  <br>An vim discere graecis blandit, ut duo nisl aeterno facilis.
+  <br>Facilis deterruisset vel no, no summo sonet diceret eum.
+  <br>Vim in consul regione omittantur, te timeam voluptaria cotidieque vim.
+  <br>Quo augue timeam efficiantur ei, ei accumsan praesent suavitate nec, no explicari reformidans sea.
+  <br>Lorem ipsum dolor sit amet, vero libris ea per
+  <br>An vim discere graecis blandit, ut duo nisl aeterno facilis.
+  <br>Facilis deterruisset vel no, no summo sonet diceret eum.
+  <br>Vim in consul regione omittantur, te timeam voluptaria cotidieque vim.
+  <br>Quo augue timeam efficiantur ei, ei accumsan praesent suavitate nec, no explicari reformidans sea.
+
+</div>
+
+<div class="main-section">
+  <div class="row">
+
+    <div class="span6">
+      <h3 class="title-box">Random facts <small>from our house</small></h3>
+    </div>
+
+    <div class="span6">
+      <h3 class="title-box">Lastest video</h3>
+    </div>
+
+  </div>
+</div>

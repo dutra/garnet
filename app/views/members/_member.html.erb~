@@ -1,0 +1,13 @@
+<%= content_tag :li, data: {id: member.id}, class: "span2 " + terms.map { |t| t.name }.join(" ") do %>
+
+<div class="center bg-transparent img-rounded">
+  <div class="bg-orange img-rounded">
+    <%= link_to member, class: "thumbnail" do %>
+    <%= image_tag member.file.url(:thumb), class: "item-hover img-rounded" %>
+    <% end %>
+  </div>
+  <h4><%= member.name %></h4>
+
+</div>
+
+<% end %>

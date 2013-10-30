@@ -1,0 +1,27 @@
+<div class="row">
+  
+  <div class="span12">
+        
+    <div class="row">
+      <%= form_for @member, :url => members_path, :html => { :multipart => true } do |f| %>
+      
+      <div class="span8">
+	<h3 class="title-box">Members#new</h3>
+	<%= f.file_field :file %>
+      </div>
+      <div class="span4">
+	<h3 class="title-box"><span class="secondary-title">Details</span></h3>
+	<dl class="dl-horizontal">
+	  
+	  <dt><%= f.label :name %></dt><dd><%= f.text_field :name %></dd>
+	  <dt><%= f.label :year, "Graduation Year" %></dt><dd><%= f.text_field :year %></dd>
+	  <dt><%= f.label :term_id, "Term (be consistent)" %></dt><dd><%= f.text_field :term_id %></dd>
+
+	  <%= f.submit "Save", class: "btn" %>
+	  
+	</dl>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

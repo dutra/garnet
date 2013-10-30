@@ -1,0 +1,84 @@
+<% provide(:title, 'About Us') %>
+
+<!-- <div class="header-secondary row"><\!-- Begin Header -\-> -->
+
+<!--   <div class=""> -->
+
+<!--     <\!-- Main Navigation -->
+<!--     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -\-> -->
+<!--     <div class="span6 pull-right"> -->
+
+<!--       <ul class="nav nav-pills"> -->
+<!--    <li><%= link_to "Astronomy", '#' %></li> -->
+<!--    <li><%= link_to "Cycling", '#' %></li> -->
+<!--    <li><%= link_to "Photography", '#'  %></li> -->
+<!--       </ul> -->
+
+<!--     </div>  -->
+<!--   </div><\!-- End Main Navigation -\-> -->
+
+<!-- </div><\!-- End Header -\-> -->
+
+<div class="row">
+  <div class="span4">
+    <%= image_tag "fenway_entrance.jpg", class: "img-rounded" %>
+  </div>
+
+  <div class="span8">
+
+    <div class="row">
+      <div class="span8">
+        <h3 class="title-box">Residents</h3>
+
+        We have all kinds of people living here, from all over the country and all over the world (not to mention all over the MIT campus, both east and west). Most majors are represented and residents have a variety of interests. Current Fenbeings are majoring in civil engineering, mechanical engineering, material science, architecture, chemistry, computer science, electrical engineering, biology, physics, neuroscience, geology, economics, aerospace engineering, and math, and minoring in theatre and literature. We have many hobbies, and are involved in such extracurricular student groups as Dramashop, GaMIT, Gilbert & Sullivan Players, LGBT, LGC, Medlinks, MITOC, Musical Theatre Guild, and the MIT Shakespeare Ensemble.
+        <br><br>
+        Our most famous alums are probably Ryan Lackey and Lori Berenson. Lori is a journalist accused of aiding Peruvian terrorists; she's currently serving a long prison term in Peru. Ryan owns a small company called HavenCo that's a data haven based out of Sealand, a country consisting of an offshore military platform near England. Other Fenway alums have gone on to graduate programs and academia, engineering firms, environmental consulting, city planning, oil drilling, public policy health consulting, web design, the pharmaceutical industry and biotech, and more.
+      </div>
+
+    </div>
+    <div class="row">
+      <div class="span8">
+        <h3 class="title-box">House</h3>
+        At Fenway House, there are lots of singles, a few doubles, and occasionally a triple or quad. Each room is unlike any other, with its own unique murals, lofts, and history. Between our kitchen, breakfast room, music room, living room, library, and ping pong room, Fenbeings have lots of public space to spread out and enjoy life in the whole house. Fenway House, unlike most off-campus living places, has a significantly lower rent than dorms, and rent includes food!
+        <br><br>
+        With early 1900's architecture, Bohemian decorations, a grand spiraling staircase, colorful murals, custom-built lofts, and diverse residents, Fenway House may be the place for you!
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="span12">
+    <h3 class="title-box">Area</h3>
+    Fenway House is located in the heart of the Back Bay. A five to ten minute walk gets you from our house to Boston Symphony, to Fenway Park, to the Museum of Fine Arts, to the Prudential and Copley, and everything in-between. The Back Bay is teeming with restaurants, bars, cafes and clubs. Across the street from our house is the Back Bay Fens, a large park with extensive lawns, athletic fields, a river, and a beautiful rose garden. Just across the Fens stands Fenway Park, and we can hear the cheers during games from our windows (it's pretty cool).
+  </div>
+</div>
+
+<div class="row">
+  <div class="span12">
+    <div id="map" style='width: 800px; height: 400px;'></div>
+  </div>
+</div>
+
+<script src="//maps.google.com/maps/api/js?v=3.13&amp;sensor=false&amp;libraries=geometry" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+  handler = Gmaps.build('Google');
+  handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+  markers = handler.addMarkers([
+  {
+  "lat": 42.345443,
+  "lng": -71.090175,
+  "picture": {
+  "url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
+  "width":  36,
+  "height": 36
+  }
+  }
+  ]);
+  handler.bounds.extendWith(markers);
+  handler.fitMapToBounds();
+  });
+
+</script>

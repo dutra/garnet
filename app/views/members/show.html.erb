@@ -1,0 +1,12 @@
+<div class="row">
+  <div class="span8">
+    <%= link_to @member.file.url do %>
+    <%= image_tag @member.file.url(:medium) %>
+    <% end %>
+  </div>
+  <div class="span4">
+    <h2><%= @member.name %></h2>
+    <p class="lead"><%= @member.year %></p>
+    
+  </div>
+</div>

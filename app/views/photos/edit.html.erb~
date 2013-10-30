@@ -1,0 +1,31 @@
+<div class="row">
+  
+  <div class="span12">
+        
+    <div class="row">
+      <%= form_for @photo, :url => photo_path(@photo), :html => { :multipart => true } do |f| %>
+
+        <div class="span7">
+	  <%= link_to @photo.file.url do %>
+	  <%= image_tag @photo.file.url(:medium), class: "thumbnail" %>
+	  <% end %>
+	</div>
+
+      <div class="span5">
+	<h3 class="title-box"><span class="secondary-title">Details</span></h3>
+	<dl class="dl-horizontal">
+	  <dt>Album Cover</dt><dd><%= check_box_tag 'cover' %>
+	  <dt><%= f.label :title %></dt><dd><%= f.text_field :title %></dd>
+	  <dt><%= f.label :camera, "Camera Model" %></dt><dd><%= f.text_field :camera, placeholder: "Camera Model" %></dd>
+	  <dt><%= f.label :lens %></dt><dd><%= f.text_field :lens, placeholder: "Lens model" %></dd>
+	  <dt><%= f.label :description %></dt><dd><%= f.text_area :description, placeholder: "Enter description here...", rows: "3" %></dd>
+
+	  <%= f.submit "Save", class: "btn" %>
+	  
+	</dl>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

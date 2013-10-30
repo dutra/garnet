@@ -1,0 +1,10 @@
+<li class="span5">
+  <div class="center bg-transparent img-rounded">
+    <div class="bg-orange img-rounded">
+      <%= link_to album do %>
+      <%= image_tag album.cover.file.url(:medium), class: "item-hover img-rounded" %>
+      <% end %>
+    </div>
+    <h4><%= album.title %></h4>
+  </div>
+</li>

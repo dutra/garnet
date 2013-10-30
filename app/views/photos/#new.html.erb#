@@ -1,0 +1,27 @@
+<div class="row">
+  
+  <div class="span12">
+        
+    <div class="row">
+      <%= form_for @photo, :url => photos_path, :html => { :multipart => true } do |f| %>
+      
+      <div class="span8">
+	<h3 class="title-box">Photos#new</h3>
+	<%= f.file_field :file %>
+      </div>
+      <div class="span4">
+	<h3 class="title-box"><span class="secondary-title">Details</span></h3>
+	<dl class="dl-horizontal">
+	  
+	  <%= select("", "album_id", Album.all.collect {|p| [ p.title, p.id ] }, {include_blank: 'None'}) %>
+	  <dt><%= f.label :title %></dt><dd><%= f.text_field :title %></dd>
+	  <dt><%= f.label :description %></dt><dd><%= f.text_area :description, placeholder: "Enter description here...", rows: "3" %></dd>
+
+	  <%= f.submit "Save", class: "btn" %>
+	  
+	</dl>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

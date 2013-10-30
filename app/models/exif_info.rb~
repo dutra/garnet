@@ -1,0 +1,3 @@
+class ExifInfo < ActiveRecord::Base
+  attr_accessible :aperture, :camera, :focal_length, :iso, :shutter_speed, :taken
+end

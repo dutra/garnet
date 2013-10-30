@@ -1,0 +1,5 @@
+<li class="span4">
+  <%= link_to @photo, class: "thumbnail" do %>
+  <%= image_tag @photo.file.url(:thumb) %>
+  <% end %>
+</li>

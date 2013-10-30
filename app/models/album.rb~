@@ -1,0 +1,5 @@
+class Album < ActiveRecord::Base
+  attr_accessible :description, :title
+  has_many :photos
+  has_one :cover, foreign_key: "album_cover_id"
+end

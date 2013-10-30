@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="span8">
+    <%= link_to @photo.file.url do %>
+    <%= image_tag @photo.file.url(:medium) %>
+    <% end %>
+  </div>
+  <div class="span4">
+    <h2><%= @photo.title %></h2>
+    <p class="lead"><%= @photo.description %></p>
+    
+
+    <h4>EXIF Information</h4>
+    
+    <% if @photo.exif_info.nil? %>
+    
+    Exif Information not available.
+    
+    <% else %>
+    
+    <dl class="dl-horizontal">
+      <dt>Camera model:</dt><dd> <%= @photo.camera %> </dd>
+      <dt>Lens model:</dt><dd> <%= @photo.lens %> </dd>
+      <dt>Focal Length:</dt><dd><%= @photo.exif_info.focal_length %> mm</dd>
+      <dt>Aperture:</dt><dd>f/<%= @photo.exif_info.aperture.to_s %></dd>
+      <dt>Shutter Speed:</dt><dd><%= @photo.exif_info.shutter_speed %> seconds</dd>
+      <dt>ISO:</dt><dd><%= @photo.exif_info.iso %></dd>
+      <dt>Taken:</dt><dd><%= @photo.exif_info.taken.to_formatted_s(:long_ordinal) %></dd>
+    </dl>
+    
+    <% end %>
+
+  </div>
+</div>

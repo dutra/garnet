@@ -1,0 +1,30 @@
+namespace :db do
+  desc "Fill database with messier objects"
+  task messier: :environment do
+
+    create_photos
+    
+  end
+end
+
+def create_albums
+
+  blizzard = Album.new
+  blizzard.title = "Blizzard"
+  blizzard.location = "Boston"
+  blizzard.save!
+
+  dinner = Album.new
+  dinner.title = "Dinner"
+  dinner.location = "Boston"
+  dinner.save!
+  
+end
+
+
+
+def create_photos
+
+  
+  
+end

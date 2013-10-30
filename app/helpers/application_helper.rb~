@@ -1,0 +1,33 @@
+module ApplicationHelper
+
+  # Return a link with correct active section
+  def header_link_to(section)
+    case section
+    when 'albums'
+      if controller_name == "albums"
+        link_to "Photos", albums_path, class: "active"
+      else 
+        link_to "Photos", albums_path
+      end
+      
+    when 'members'
+      if controller_name == "members"
+        link_to "Members", members_path, class: "active"
+      else 
+        link_to "Members", members_path
+      end
+    end
+  end
+    
+
+  # Returns the full title on a per-page basis.
+  def full_title(page_title)
+    base_title = "Fenway"
+    if page_title.empty?
+      base_title
+    else
+      "#{base_title} | #{page_title}"
+    end
+  end
+  
+end

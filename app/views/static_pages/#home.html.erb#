@@ -1,0 +1,69 @@
+<% provide(:title, 'Home') %>
+
+<div class="row">
+
+  <div class="span7">
+    <div id="myCarousel" class="carousel slide">
+
+      <div class="carousel-inner">
+        <div class="item active">
+          <%= link_to @photo do %>
+          <%= image_tag @photos[3].file.url(:carousel) %>
+          <% end %>
+          <div class="carousel-caption">
+            <h4>Parallel Universe</h4>
+            <p>Party with Fenway</p>
+          </div>
+        </div>
+        <div class="item">
+          <%= link_to @photo do %>
+          <%= image_tag @photos[1].file.url(:carousel) %>
+          <% end %>
+          <div class="carousel-caption">
+            <h4>House Dinner!</h4>
+            <p>Last weekend we went out for house dinner and got very yummy food!</p>
+          </div>
+        </div>
+
+        <div class="item">
+          <%= link_to @photo do %>
+          <%= image_tag @photos[0].file.url(:carousel) %>
+          <% end %>
+          <div class="carousel-caption">
+            <h4>Blizzard!</h4>
+            <p>Lots of snow!</p>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div>
+
+
+  </div>
+
+  <div class="span5">
+    <h1>Hello there. We are <span class="emph">Fenway House</span>.<br></h1>
+    Fenway is a coed independent living group for students at the Massachusetts Institute of Technology. We are 20 men and women sharing a large five story house in Boston's Back Bay. We're a 20 minute walk from the MIT campus.
+
+  </div>
+</div>
+
+<div class="row">
+    <div class="span12">
+      <h3 class="title-box">Recent News</h3>
+      
+    </div>
+</div>
+
+<div class="row">
+
+  <div class="span6">
+    <h3 class="title-box">Random facts <small>from our house</small></h3>
+  </div>
+
+  <div class="span6">
+    <h3 class="title-box">Lastest video</h3>
+  </div>
+
+</div>

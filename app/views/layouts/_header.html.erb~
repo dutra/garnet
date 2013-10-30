@@ -1,0 +1,29 @@
+<div class="header row"><!-- Begin Header -->
+  
+  <div class="">
+    <!-- Left Logo
+	 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="span4 logo">
+      <%= link_to root_path do %>
+      34<span class="secondary">Fenway</span>
+      <% end %>
+    </div>
+    
+    <!-- Main Navigation
+	 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+    <div class="span8 navigation pull-right">
+      <div class="navbar pull-right">
+	
+	<ul class="nav">
+	  <li><%= link_to "Home", '#' %></li>
+	  <li><%= header_link_to 'members' %></li>
+	  <li><%= link_to "Events", '#' %></li>
+	  <li><%= header_link_to 'albums' %></li>
+	  <li><%= link_to "Contact", '#' %></li>
+	</ul>
+	
+      </div>
+    </div> 
+  </div><!-- End Main Navigation -->
+
+</div><!-- End Header -->

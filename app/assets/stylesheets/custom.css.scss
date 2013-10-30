@@ -1,0 +1,255 @@
+@import "bootstrap";
+@import "bootstrap-responsive";
+
+$green: #66CD00;
+$grey-100: #D8D8D8;
+$grey-200: #999999;
+$grey-300: #666666;
+$grey-400: #606060;
+$grey-500: #565656;
+$grey-600: #474747;
+$grey-700: #383838;
+$grey-800: #313131; /*#333333*/
+$grey-900: #282828;
+$orange: #EF4F1D;
+$orange-bright: #E83F0B;
+$grey-light: #D9D7D3;
+$purple: #6600CD;
+
+$red: #E3170D;
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/ MIXINS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+@mixin box_sizing {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/ BODY
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+body {
+    font-family: 'Varela Round', "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: black;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0px;
+    background-color: white;
+    font-size: 16px;
+}
+
+.main-section {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+    
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/ TYPOGRAPHY
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.emph {
+    color: $red;
+}
+h1 {
+    color: $grey-800;
+}
+.title-box {
+    small {
+	color: white;
+    }
+    background-color: #a0a0a0;
+    color: $red;
+}
+h3.title-box {
+    padding-left: 10px;
+}
+h3.title-box small {
+    font-weight: 100;
+    line-height: 24px;
+    font-size: 22px;   
+}
+.secondary-title {
+    color: white;
+}
+.center {
+    text-align: center;
+}
+.lead {
+    line-height:22px;
+    margin: 20px 0px 30px 0px;
+    font-family: "Arvo";
+    font-weight: 700;
+    font-size: 20px;
+    color: $red;
+}
+
+/* boxes */
+
+.bg-transparent {
+    color: white;
+    background-color: $grey-700;
+    padding: 0 0 1px 0;
+}
+
+.item {
+}
+
+.bg-orange {
+    background-color: $red;
+}
+.bg-white {
+    padding-bottom: 4px;
+    background-color: white;
+}
+
+.thumbnail {
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    background-color: white;
+    border: none;
+}
+
+.centered-box {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/ HEADER
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.black-bg {
+    background-color: $grey-900;
+    padding-top: 3px;
+}
+.red-bg {
+    background-color: $red;
+    padding-top: 3px;
+}
+
+.header {
+    top: 50%;
+    margin-bottom: 0px;
+    margin-top: 60px;
+}
+
+.header .logo {
+    padding-top: 10px;
+    position: relative;
+    vertical-align: middle;
+    top: 50%;
+}
+.header .logo > a {
+    text-spacing: 4px;
+    overflow: hidden;
+    top: 50%;
+    position: relative;
+    font-family: 'Holtwood One SC', serif;
+    color: #D44942;
+    text-weight: 900;
+    font-size: 60px;
+    .secondary {
+	color: $grey-700;
+    }
+
+    &:hover {
+	text-decoration: none;
+    }
+}
+.header .navigation {
+    padding:  auto 0 0 0;
+    margin: auto 0;
+}
+.navbar .nav {
+    margin: 0px;
+}
+.header .nav {
+    padding: 0 5px;
+    background-color: $grey-700;
+    border: 1px none #e5e5e5;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.header  .navbar > .nav > li > a {
+    padding: 10px 22px;
+    color: white;
+    background-color: $grey-700;
+    &:hover {
+	color: white;
+	background-color: $red;
+    }
+    &.active {
+	background-color: $red;
+    }
+}
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/ SECONDARY HEADER
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.header-secondary {
+    .nav {
+	font-weight: bold;
+	a {
+	    color: $orange;
+	    background-color: $grey-100;
+	}
+	a:hover {
+//	    background-color: #F5F5F5;
+	}
+    }
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/ SIDEBAR
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+.sidebar {
+    list-style-type: none;
+    padding: 5px 0px;
+    background-color: $grey-200;
+    border: 1px none #e5e5e5;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+
+}
+
+.sidebar a {
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    
+    li {
+	padding: 1px 10px;
+    &:hover {
+	color: white;
+	background-color: $red;
+    }
+    &.active {
+	background-color: $red;
+    }
+    }
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  / FORM
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+input[type='text'], input[type='password'], input, textarea, select, .uneditable-input {
+    border: 1px solid #bbb;
+    padding: 3px;
+    height: auto;
+    margin-bottom: 8px;
+    padding-left: 5px;
+    @include box_sizing;
+}
+
+.debug {
+    margin: 30px auto;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  / BUTTONS
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
