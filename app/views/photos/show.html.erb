@@ -1,7 +1,7 @@
 <div class="row">
   <div class="span8">
     <%= link_to @photo.file.url do %>
-    <%= image_tag @photo.file.url(:medium) %>
+    <%= image_tag @photo.file.url(:medium), class: "img-rounded" %>
     <% end %>
   </div>
   <div class="span4">

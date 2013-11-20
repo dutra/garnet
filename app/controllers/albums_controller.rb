@@ -19,7 +19,7 @@ class AlbumsController < ApplicationController
 
   def show
     @album = Album.find(params[:id])
-    @photos = @album.photos.paginate(page: params[:page])
+    @photos = @album.photos.paginate(page: params[:page], per_page: 9)
   end
 
   def edit

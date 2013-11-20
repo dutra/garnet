@@ -8,7 +8,7 @@
       <div class="carousel-inner">
         <div class="item active">
           <%= link_to @photo do %>
-          <%= image_tag @photos[3].file.url(:carousel) %>
+          <%= image_tag @photos[0].file.url(:carousel) %>
           <% end %>
           <div class="carousel-caption">
             <h4>Parallel Universe</h4>
@@ -27,7 +27,7 @@
 
         <div class="item">
           <%= link_to @photo do %>
-          <%= image_tag @photos[0].file.url(:carousel) %>
+          <%= image_tag @photos[2].file.url(:carousel) %>
           <% end %>
           <div class="carousel-caption">
             <h4>Blizzard!</h4>

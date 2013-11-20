@@ -1,12 +1,88 @@
 <div class="row">
-  <div class="span8">
-    <%= link_to @member.file.url do %>
-    <%= image_tag @member.file.url(:medium) %>
-    <% end %>
+  <div class="span6">
+    <%= image_tag @member.file.url(:medium), class: "img-rounded" %>
   </div>
-  <div class="span4">
-    <h2><%= @member.name %></h2>
-    <p class="lead"><%= @member.year %></p>
-    
+
+  <div class="span6">
+    <div class="row">
+      <div class="span4">
+        <h2><%= @member.name %></h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="span4">
+        <%= @member.origin %>
+	<% unless @member.course.nil? %>
+	- Course <%= @member.course %>
+	<% end %>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="span5">
+
+        <dl class="dl-horizontal">
+          <% unless @member.measurements.nil? %>
+          <dt>Measurements:</dt><dd> <%= @member.measurements %> </dd>
+          <% end %>
+	  
+          <% unless @member.turnons.nil? %>
+          <dt>Turn-ons:</dt><dd> <%= @member.turnons %> </dd> <% end %>
+
+	  <% unless @member.turnoffs.nil? %>
+          <dt>Turn-offs:</dt><dd> <%= @member.turnoffs %> </dd>
+	  <% end %>
+
+	  <% unless @member.fav_activities.nil? %>
+          <dt>Activities:</dt><dd> <%= @member.fav_activities %> </dd>
+	  <% end %>
+
+	  <% unless @member.guilty_pleasures.nil? %>
+          <dt>Guilty Pleasures:</dt><dd> <%= @member.guilty_pleasures %> </dd>
+	  <% end %>
+
+	  <% unless @member.ambitions.nil? %>
+          <dt>Ambitions:</dt><dd> <%= @member.ambitions %> </dd>
+	  <% end %>
+
+	  <% unless @member.books.nil? %>
+          <dt>Books:</dt><dd> <%= @member.books %> </dd>
+	  <% end %>
+
+	  <% unless @member.movies.nil? %>
+          <dt>Movies:</dt><dd> <%= @member.movies %> </dd>
+	  <% end %>
+
+	  <% unless @member.sports.nil? %>
+          <dt>Sports:</dt><dd> <%= @member.sports %> </dd>
+	  <% end %>
+
+	  <% unless @member.pets.nil? %>
+          <dt>Pets:</dt><dd> <%= @member.pets %> </dd>
+	  <% end %>
+
+	  <% unless @member.foods.nil? %>
+          <dt>Foods:</dt><dd> <%= @member.foods %> </dd>
+	  <% end %>
+
+	  <% unless @member.people_admire.nil? %>
+          <dt>Admired People:</dt><dd> <%= @member.people_admire %> </dd>
+	  <% end %>
+
+	  <% unless @member.sexiest_city.nil? %>
+          <dt>World's Sexiest City:</dt><dd> <%= @member.sexiest_city %> </dd>
+	  <% end %>
+
+	  <% unless @member.morning.nil? %>
+          <dt>In the Morning:</dt><dd> <%= @member.morning %> </dd>
+	  <% end %>
+
+	  <% unless @member.date_idea.nil? %>
+          <dt>Perfect First Date:</dt><dd> <%= @member.date_idea %> </dd>
+	  <% end %>
+        </dl>
+      </div>
+    </div>
   </div>
 </div>

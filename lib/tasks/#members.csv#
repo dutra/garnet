@@ -1,0 +1,17 @@
+name, file, year, measurements, turnons, turnoffs, fav_activities, guilty_pleasures, ambitions, books, movies, sports, pets, foods, people_admire, sexiest_city, morning, date_idea
+"Matthew Overlin"," Senior","((e^(2*pi))/(log(2.10899001)*e*4!))","vampires, fire-breathing dragons, Rudy Tanin", "black licorice, ice-breathing dragons, biology"
+  m.fav_activities = "camping, running, EE"
+  m.guilty_pleasures = "Rudy Tanin, Meth"
+  m.ambitions = "FPGA development, running/swimming long distances"
+  m.books = "Design of Analog CMOS Integrated Circuits by Behzad Razavi, Analysis and Design of Analog Integrated Circuits, 5th ed. by Paul Gray"
+  m.movies = "Scarface, Pulp Fiction, (all Jackie Chan movies)"
+  m.sports = "running, foosball, pool billiards"
+  m.pets = "snakes, cats, cabybaras"
+  m.foods = "Pasta, steak, tacos"
+  m.people_admire = "Jackie Chan"
+  m.sexiest_city = "Colfax, Iowa"
+  m.morning = "http://www.youtube.com/watch?v=OLZSKhuFDnY"
+  m.date_idea = "doing physics in PCR"
+
+
+  

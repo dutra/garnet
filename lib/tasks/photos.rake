@@ -24,18 +24,44 @@ def create_albums
   party.title = "Parallel Universe"
   party.location = "Boston"
   party.save!
-  
+
+  ice = Album.new
+  ice.title = "Ice Skating"
+  ice.location = "Boston"
+  ice.save!
+
 end
 
 
 
 def create_photos
-  
-  p = Album.find(1).photos.new
-  p.file = File.open(Dir.glob(File.join(Rails.root, 'private', 'sample_images', 'blizzard.jpg')).first)
-  p.title = "Blizzard"
-  p.album_cover_id = 1
-  p.save!
+
+  blizzard = Dir.glob(File.join(Rails.root, 'private', 'albums', 'blizzard', '*')).sort
+  blizzard.each do |file|
+    puts file
+    p = Album.find_by_title("Blizzard").photos.new
+    p.file = File.open(file)
+    p.title = "Blizzard"
+    p.save!
+
+  end
+  cover = Album.find_by_title("Blizzard").photos.first
+  cover.album_cover_id = Album.find_by_title("Blizzard").id
+  cover.save!
+
+  ice = Dir.glob(File.join(Rails.root, 'private', 'albums', 'ice_skating', '*')).sort
+  ice.each do |file|
+    puts file
+    p = Album.find_by_title("Ice Skating").photos.new
+    p.file = File.open(file)
+    p.title = "Ice Skating"
+    p.save!
+
+  end
+  cover = Album.find_by_title("Ice Skating").photos.first
+  cover.album_cover_id = Album.find_by_title("Ice Skating").id
+  cover.save!
+
 
   p = Album.find(2).photos.new
   p.file = File.open(Dir.glob(File.join(Rails.root, 'private', 'sample_images', 'dinner1.jpg')).first)

@@ -2,7 +2,7 @@ class Photo < ActiveRecord::Base
   attr_accessible :file, :description, :title, :camera, :lens
   has_attached_file :file, :styles => { original: "1920x1080",
     medium: "800x600",
-    thumb: "300x200",
+    thumb: "300x200#",
     carousel: "770x350#" },
   :convert_options => {
     thumb: "-quality 100 -strip",

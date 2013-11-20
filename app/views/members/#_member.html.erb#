@@ -1,7 +1,7 @@
 <%= content_tag :li, data: {id: member.id}, class: "span2 " + terms.map { |t| t.name }.join(" ") do %>
 
 <div class="center bg-transparent img-rounded">
-  <div class="bg-orange img-rounded">
+ z <div class="bg-orange img-rounded">
     <%= link_to member, class: "thumbnail item-hover" do %>
     <%= image_tag member.file.url(:thumb), class: "img-rounded" %>
     <% end %>

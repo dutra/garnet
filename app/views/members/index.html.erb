@@ -17,6 +17,10 @@
   <div class="header-secondary">
     <div class="span2">
       <ul class="nav nav-pills nav-stacked">
+	<li>
+          <%= link_to "All", "#", id: "btn-all" %>
+        </li>
+
         <% @terms.each do |term| %>
         <li>
           <%= link_to term.title, "#", id: "btn-"+term.name %>
@@ -33,9 +37,16 @@
   var $data = $members.clone();
 
 
+  $('#btn-all').click(function(e) {
+  $filteredData = $data.find('li');
+  $members.quicksand(  $filteredData, {
+  duration: 800
+  });
+  e.preventDefault();
+  });
+
   $('#btn-fa13').click(function(e) {
   $filteredData = $data.find('li.fa13');
-
   $members.quicksand(  $filteredData, {
   duration: 800
   });
@@ -44,7 +55,14 @@
 
   $('#btn-sp13').click(function(e) {
   $filteredData = $data.find('li.sp13');
+  $members.quicksand( $filteredData, {
+  duration: 800
+  });
+  e.preventDefault();
+  });
 
+  $('#btn-su13').click(function(e) {
+  $filteredData = $data.find('li.su13');
   $members.quicksand( $filteredData, {
   duration: 800
   });

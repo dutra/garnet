@@ -1,8 +1,7 @@
 <li class="span3">
-  <div class="bg-orange">
-    <%= link_to photo do %>
-    <%= image_tag photo.file.url(:thumb), class: "item" %>
+  <div class="bg-orange img-rounded">
+    <%= link_to photo, class: "item-hover thumbnail" do %>
+    <%= image_tag photo.file.url(:thumb), class: "img-rounded" %>
     <% end %>
   </div>
 </li>
-

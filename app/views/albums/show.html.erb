@@ -1,19 +1,29 @@
 <div class="row">
-  
+
   <div class="span9">
     <div class="row">
-     	<%= will_paginate @photos %>
-	<% @photos.each do |photo| %>
-	<%= render partial: 'photo', locals: { photo: photo } %>
-	<% end %>
-	
-     </div>
+      <div class="span5">
+        <%= will_paginate @photos %>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="span9">
+        <ul class="thumbnails">
+
+          <% @photos.each do |photo| %>
+          <%= render partial: 'photo', locals: { photo: photo } %>
+          <% end %>
+
+        </ul>
+      </div>
+    </div>
   </div>
-  
+
   <div class="span3">
     <h2><%= @album.title %></h2>
     <p class="lead"><%= @album.description %></p>
     <strong>Location:</strong> <%= @album.location %>
   </div>
-  
+
 </div>

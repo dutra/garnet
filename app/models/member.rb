@@ -1,5 +1,6 @@
 class Member < ActiveRecord::Base
-  attr_accessible :name, :year, :file
+  attr_accessible :name, :email, :year, :file, :origin, :course,
+  :measurements, :turnons, :turnoffs, :fav_activities, :guilty_pleasures, :ambitions, :books, :movies, :sports, :pets, :foods, :sexiest_city, :morning, :date_idea, :people_admire
 
   has_and_belongs_to_many :terms
   

@@ -1,4 +1,52 @@
 <div class="row">
-  <div class="span12">
+  <div class="offset6 span6">
+
+    <%= form_tag("#", method: "put", id: "fcontact") do %>
+
+    <div class="row">
+      <div class="span3">
+        <%= label_tag(:name, "Name") %>
+        <%= text_field_tag(:name) %>
+      </div>
+      <div class="span3">
+        <%= label_tag(:name, "Email") %>
+        <%= text_field_tag(:email) %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span6">
+        <%= label_tag(:name, "Message") %>
+        <%= text_area_tag :message, nil, rows: 6 %>
+      </div>
+    </div>
+    <div class="row">
+      <div id="mc" class="span4">
+        <%= hidden_field_tag('mc-action', "/contact") %>
+        <p>Please draw the shape in the box to submit the form:</p>
+        <canvas id="mc-canvas" class="pull-right"></canvas>
+      </div>
+      <div class="span2">
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+        <br>
+	<br>
+	<br>
+	<%= submit_tag("Send", class: "btn btn-primary pull-right", disabled: "disabled") %>
+      </div>
+    </div>
+
+    <% end %>
+
   </div>
 </div>
+
+<%= @params.inspect %>
+
+<script type="text/javascript">
+
+  $("#fcontact").motionCaptcha();
+
+</script>
