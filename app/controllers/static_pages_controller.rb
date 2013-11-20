@@ -12,7 +12,12 @@ class StaticPagesController < ApplicationController
 
 
   def contact
-    @params = params
+    if params[:message].present?
+      ContactMail.contact_email(params).deliver
+      flash[:success] = "Email successfully sent!"
+      redirect_to '/contact'
+    end
+
     
   end
 

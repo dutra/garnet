@@ -39,6 +39,10 @@
     <div class="span12 centered-box">
       
       <%= render 'layouts/header' %>
+
+      <div class="body-vertical-space">
+      </div>
+
       
       <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "alert alert-#{key}") %>
