@@ -2,7 +2,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'bootstrap-sass'
+gem 'bootstrap-sass', '2.3.2'
 gem 'jquery-rails', '2.0.2'
 gem 'bcrypt-ruby', '3.0.1'
 gem 'faker', '1.0.1'
@@ -12,7 +12,7 @@ gem 'paperclip'
 gem 'exifr'
 gem 'gmaps4rails'
 gem 'underscore-rails'
-
+gem 'ffi', '1.9.3'
 group :development, :test do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.11.0'
