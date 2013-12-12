@@ -1,10 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-    @photos = []
-    @photos << Album.find_by_title("Parallel Universe").cover
-    @photos << Album.find_by_title("Dinner").cover
-    @photos << Album.find_by_title("Blizzard").cover
-
+    @carousels = Carousel.all
   end
 
   def about

@@ -4,83 +4,56 @@ namespace :db do
 
     create_albums
     create_photos
-    
+
   end
 end
 
 def create_albums
 
-  blizzard = Album.new
-  blizzard.title = "Blizzard"
-  blizzard.location = "Boston"
-  blizzard.save!
 
-  dinner = Album.new
-  dinner.title = "Dinner"
-  dinner.location = "Boston"
-  dinner.save!
+  CSV.foreach("db/data/albums.csv", headers: true) do | row |
+    title = row['title']
+    description = row['description']
+    location = row['location']
 
-  party = Album.new
-  party.title = "Parallel Universe"
-  party.location = "Boston"
-  party.save!
+    puts "Processing album #{title}"
 
-  ice = Album.new
-  ice.title = "Ice Skating"
-  ice.location = "Boston"
-  ice.save!
+    a = Album.new
+    a.title = title
+    a.description = description
+    a.location = location
+    a.save!
+
+  end
 
 end
 
-
-
 def create_photos
 
-  blizzard = Dir.glob(File.join(Rails.root, 'private', 'albums', 'blizzard', '*')).sort
-  blizzard.each do |file|
-    puts file
-    p = Album.find_by_title("Blizzard").photos.new
-    p.file = File.open(file)
-    p.title = "Blizzard"
+
+  CSV.foreach("db/data/photos.csv", headers: true) do | row |
+    file = row['file']
+    album = row['album']
+    title = row['title']
+    description = row['description']
+    cover = row['cover']
+    carousel = row['carousel']
+    carousel_title = row['carousel_title']
+    carousel_description = row['carousel_description']
+
+    puts "Processing photo #{file}, #{title} from album #{album}"
+    a = Album.find_by_title(album)
+    p = a.photos.new
+    p.file = File.open(Dir.glob(File.join(Rails.root, 'private', 'albums', album.underscore, file)).first)
+    p.title = title
+    p.description = description
+    if cover == "1"
+      puts "Setting up cover as #{file}"
+      p.album_cover_id = a.id
+    end
     p.save!
 
-  end
-  cover = Album.find_by_title("Blizzard").photos.first
-  cover.album_cover_id = Album.find_by_title("Blizzard").id
-  cover.save!
-
-  ice = Dir.glob(File.join(Rails.root, 'private', 'albums', 'ice_skating', '*')).sort
-  ice.each do |file|
-    puts file
-    p = Album.find_by_title("Ice Skating").photos.new
-    p.file = File.open(file)
-    p.title = "Ice Skating"
-    p.save!
 
   end
-  cover = Album.find_by_title("Ice Skating").photos.first
-  cover.album_cover_id = Album.find_by_title("Ice Skating").id
-  cover.save!
 
-
-  p = Album.find(2).photos.new
-  p.file = File.open(Dir.glob(File.join(Rails.root, 'private', 'sample_images', 'dinner1.jpg')).first)
-  p.title = "Dinner 1"
-  p.album_cover_id = 2
-  p.save!
-
-  p = Album.find(2).photos.new
-  p.file = File.open(Dir.glob(File.join(Rails.root, 'private', 'sample_images', 'dinner2.jpg')).first)
-  p.title = "Dinner 2"
-  p.save!
-
-  p = Album.find(3).photos.new
-  p.file = File.open(Dir.glob(File.join(Rails.root, 'private', 'sample_images', 'party.jpg')).first)
-  p.title = "Parallel Universe"
-  p.album_cover_id = 3
-  p.save!
-
-  
-                     
-  
 end

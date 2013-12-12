@@ -1,14 +1,15 @@
 class Photo < ActiveRecord::Base
-  attr_accessible :file, :description, :title, :camera, :lens
+  attr_accessible :file, :description, :title, :carousel, :carousel_title, :carousel_description
   has_attached_file :file, :styles => { original: "1920x1080",
     medium: "800x600",
-    thumb: "300x200#",
-    carousel: "770x350#" },
+    thumb: "300x200#"  },
   :convert_options => {
     thumb: "-quality 100 -strip",
-    medium: "-quality 100 -strip",
-    carousel: "-quality 80 -strip" }
-  
+    medium: "-quality 100 -strip"
+  }
+
+
+  has_one :carousel
   belongs_to :album
   belongs_to :album_cover, foreign_key: "album_cover_id"
 #  has_one :exif_info

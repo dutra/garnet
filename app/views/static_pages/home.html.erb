@@ -4,74 +4,60 @@
 
   <div class="span7">
     <div id="myCarousel" class="carousel slide">
-
       <div class="carousel-inner">
-        <div class="item active">
-          <%= link_to @photo do %>
-          <%= image_tag @photos[0].file.url(:carousel) %>
-          <% end %>
-          <div class="carousel-caption">
-            <h4>Parallel Universe</h4>
-            <p>Party with Fenway</p>
-          </div>
-        </div>
-        <div class="item">
-          <%= link_to @photo do %>
-          <%= image_tag @photos[1].file.url(:carousel) %>
-          <% end %>
-          <div class="carousel-caption">
-            <h4>House Dinner!</h4>
-            <p>Last weekend we went out for house dinner and got very yummy food!</p>
-          </div>
-        </div>
 
-        <div class="item">
-          <%= link_to @photo do %>
-          <%= image_tag @photos[2].file.url(:carousel) %>
-          <% end %>
-          <div class="carousel-caption">
-            <h4>Blizzard!</h4>
-            <p>Lots of snow!</p>
+        <% @carousels.each do |carousel| %>
+        <% if carousel.id == 1 %>
+        <div class="item active">
+          <% else %>
+          <div class="item">
+            <% end %>
+            <%= image_tag carousel.file.url(:carousel) %>
+            <div class="carousel-caption">
+              <h4><%= carousel.title %></h4>
+              <p><%= carousel.description %></p>
+            </div>
           </div>
+          <% end %>
+
         </div>
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
       </div>
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+
+
     </div>
 
+    <div class="span5">
+      <h1>Hello there. We are <span class="emph">Fenway House</span>.<br></h1>
+      Fenway is a coed independent living group for students at the Massachusetts Institute of Technology. We are 20 men and women sharing a large five story house in Boston's Back Bay. We're a 20 minute walk from the MIT campus.
 
+    </div>
   </div>
 
-  <div class="span5">
-    <h1>Hello there. We are <span class="emph">Fenway House</span>.<br></h1>
-    Fenway is a coed independent living group for students at the Massachusetts Institute of Technology. We are 20 men and women sharing a large five story house in Boston's Back Bay. We're a 20 minute walk from the MIT campus.
+  <div class="row">
+
+    <div class="span12">
+      <h3 class="title-box">Random facts <small>about our house</small></h3>
+      <ul>
+        <li>Our members are from all around the world. We currently have members from Brazil, India, Armenia, Iran, Japan, United States, France and Indonesia. Previous semester included people from England, Austria, China, Italy and Poland.</li>
+        <li>Our house has a Pit under the basement, where arcane rituals are performed by some members.</li>
+        <li>Our Alumni and Alumnae are still active in the house and frequently come visit us.</li>
+        <li>We are a very diverse group, with all sorts of Physics Majors.</li>
+      </ul>
+
+    </div>
 
   </div>
-</div>
-
-<div class="row">
-
-  <div class="span12">
-    <h3 class="title-box">Random facts <small>about our house</small></h3>
-          <ul>
-	    <li>Our members are from all around the world. We currently have members from Brazil, India, Armenia, Iran, Japan, United States, France and Indonesia. Previous semester included people from England, Austria, China, Italy and Poland.</li>
-	    <li>Our house has a Pit under the basement, where arcane rituals are performed by some members.</li>
-	    <li>Our Alumni and Alumnae are still active in the house and frequently come visit us.</li>
-	    <li>We are a very diverse group, with all sorts of Physics Majors.</li>
-	  </ul>
-
-  </div>
-
-</div>
-<div class="row">
+  <div class="row">
     <div class="span6">
       <h3 class="title-box">Recent News</h3>
- 
+
     </div>
 
 
-  <div class="span6">
-    <h3 class="title-box">Lastest video</h3>
-  </div>
+    <div class="span6">
+      <h3 class="title-box">Lastest video</h3>
+    </div>
 
-</div>
+  </div>

@@ -6,8 +6,9 @@ class CreatePhotos < ActiveRecord::Migration
       t.integer :album_cover_id
       t.string :title
       t.string :description
-      t.string :camera
-      t.string :lens
+      t.boolean :carousel
+      t.string :carousel_title
+      t.string :carousel_description
       t.timestamps
     end
   end

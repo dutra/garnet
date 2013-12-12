@@ -1,5 +1,10 @@
 #!/bin/bash
 rm -rf db/development.sqlite3
 bundle exec rake db:migrate
+wget 'https://docs.google.com/spreadsheet/pub?key=0AqHBdXx9vx3bdGRJS28wcUxXVWt4V3FmY0l6M2lLVHc&single=true&gid=0&output=csv' -O db/data/members.csv
+wget 'https://docs.google.com/spreadsheet/pub?key=0AqHBdXx9vx3bdEg1LWlBS3Jxci1RQ29aQ1VWenNCa1E&single=true&gid=0&output=csv' -O db/data/albums.csv
+wget 'https://docs.google.com/spreadsheet/pub?key=0AqHBdXx9vx3bdHdXbkJ3Qkt0M1lfMVRTMlMwRE12Q0E&single=true&gid=0&output=csv' -O db/data/photos.csv
+wget 'https://docs.google.com/spreadsheet/pub?key=0AqHBdXx9vx3bdE5OUkZwZXFOU2dfcUtydGI5Tk1DaXc&single=true&gid=0&output=csv' -O db/data/carousel.csv
 bundle exec rake db:members
 bundle exec rake db:albums
+bundle exec rake db:carousel
