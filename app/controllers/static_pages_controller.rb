@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   def home
-    @carousels = Carousel.all
+    @carousels = Carousel.all.reverse
   end
 
   def about

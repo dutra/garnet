@@ -4,6 +4,7 @@ class CreateAlbums < ActiveRecord::Migration
       t.string :title
       t.string :description
       t.string :location
+      t.belongs_to :event
       t.date :date
       t.timestamps
     end

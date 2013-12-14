@@ -22,13 +22,19 @@ module ApplicationHelper
       else
         link_to "Photos", albums_path
       end
-
     when 'members'
       if controller_name == "members"
         link_to "Members", members_path, class: "active"
       else
         link_to "Members", members_path
       end
+    when 'events'
+      if controller_name == "events"
+        link_to "Events", events_path, class: "active"
+      else
+        link_to "Events", events_path
+      end
+
     when 'contact'
       if controller_name == "static_pages" and action_name == "contact"
         link_to "Contact", '/contact', class: "active"

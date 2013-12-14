@@ -37,14 +37,12 @@ def create_photos
     title = row['title']
     description = row['description']
     cover = row['cover']
-    carousel = row['carousel']
-    carousel_title = row['carousel_title']
-    carousel_description = row['carousel_description']
+    puts "Processing photo #{file}, #{title} from album #{album.parameterize.underscore}"
 
-    puts "Processing photo #{file}, #{title} from album #{album}"
+
     a = Album.find_by_title(album)
     p = a.photos.new
-    p.file = File.open(Dir.glob(File.join(Rails.root, 'private', 'albums', album.underscore, file)).first)
+    p.file = File.open(Dir.glob(File.join(Rails.root, 'private', 'albums', album.parameterize.underscore, file)).first)
     p.title = title
     p.description = description
     if cover == "1"

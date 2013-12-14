@@ -4,6 +4,7 @@ class Carousel < ActiveRecord::Base
     carousel: "770x350#" },
   :convert_options => {
     carousel: "-quality 100 -strip" }
-
-  belongs_to :photo
+  
+  belongs_to :album
+  belongs_to :event
 end

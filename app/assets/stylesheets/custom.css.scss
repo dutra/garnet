@@ -259,3 +259,22 @@ input[type='text'], input[type='password'], input, textarea, select, .uneditable
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   / BUTTONS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  / PROJECT LIST
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+div.event {
+    padding: 10px 0px;
+    &:hover {
+	background: #eee;
+    }
+}
+.event p.description {
+    color: #999999;
+    font-size: 18px;
+    
+}
+a .event {
+    color: black;
+}

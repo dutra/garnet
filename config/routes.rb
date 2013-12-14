@@ -5,7 +5,7 @@ Garnet::Application.routes.draw do
   resources :members
   resources :photos
   resources :albums
-
+  resources :events
   
   match '/about', to: 'static_pages#about'
   match '/contact', to: 'static_pages#contact'

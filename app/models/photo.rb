@@ -8,8 +8,6 @@ class Photo < ActiveRecord::Base
     medium: "-quality 100 -strip"
   }
 
-
-  has_one :carousel
   belongs_to :album
   belongs_to :album_cover, foreign_key: "album_cover_id"
 #  has_one :exif_info

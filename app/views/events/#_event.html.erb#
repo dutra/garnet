@@ -1,0 +1,13 @@
+<%= link_to event.album do %>
+<div class="row event img-rounded">
+  <div class="span2">
+    <%= image_tag event.file.url(:thumb), class: "img-rounded" %>
+  </div>
+  <div class="span10">
+    <h3> <%= event.title %> </h3>
+    <p class="description">
+      <%= event.description %>
+    </p>
+  </div>
+</div>
+<% end %>
