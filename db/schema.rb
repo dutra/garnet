@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(:version => 20131214001618) do
   create_table "events", :force => true do |t|
     t.string   "title"
     t.string   "description"
-    t.date     "date"
+    t.datetime "datetime"
     t.integer  "termb_id"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false

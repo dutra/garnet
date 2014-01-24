@@ -11,18 +11,20 @@ def create_events
 
 
   CSV.foreach("db/data/events.csv", headers: true) do | row |
+    puts row.inspect
     file = row['file']
     title = row['title']
     description = row['description']
     album = row['album']
-    date = row['date']
+    start = row['start']
     
     puts "Processing event #{title}"
     p = Event.new
     p.file = File.open(Dir.glob(File.join(Rails.root, 'private', 'events', file)).first)
     p.title = title
     p.description = description
-    p.date = date
+    puts "Event datetime is #{start}"
+    p.datetime = DateTime.parse(start)
 
     # unless event.blank?
     #   a = Event.find_by_title(event)

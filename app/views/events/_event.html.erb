@@ -4,7 +4,7 @@
     <%= image_tag event.file.url(:thumb), class: "img-rounded" %>
   </div>
   <div class="span10">
-    <h3> <%= event.title %> </h3>
+    <h3> <%= event.title %> <span class="lead">(<%= event.datetime.strftime("%A, %b %d, %Y - %l:%M%P") %>)</span> </h3>
     <p class="description">
       <%= event.description %>
     </p>
