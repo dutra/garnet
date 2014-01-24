@@ -37,6 +37,7 @@
   var $data = $members.clone();
 
 
+
   $('#btn-all').click(function(e) {
   $filteredData = $data.find('li');
   $members.quicksand(  $filteredData, {
@@ -45,33 +46,14 @@
   e.preventDefault();
   });
 
-  $('#btn-fa13').click(function(e) {
-  $filteredData = $data.find('li.fa13');
+  <% @terms.each do |term| %>
+  $('<%= "#btn-#{term.name}" %>').click(function(e) {
+  $filteredData = $data.find('<%= "li.#{term.name}" %>');
   $members.quicksand(  $filteredData, {
   duration: 800
   });
   e.preventDefault();
   });
-
-  $('#btn-sp13').click(function(e) {
-  $filteredData = $data.find('li.sp13');
-  $members.quicksand( $filteredData, {
-  duration: 800
-  });
-  e.preventDefault();
-  });
-
-  $('#btn-su13').click(function(e) {
-  $filteredData = $data.find('li.su13');
-  $members.quicksand( $filteredData, {
-  duration: 800
-  });
-  e.preventDefault();
-  });
-
-  <% @terms.each do |term| %>
-
-
   <% end %>
 
 

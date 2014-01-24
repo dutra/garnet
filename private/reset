@@ -6,6 +6,8 @@ wget 'https://docs.google.com/spreadsheet/pub?key=0AqHBdXx9vx3bdEg1LWlBS3Jxci1RQ
 wget 'https://docs.google.com/spreadsheet/pub?key=0AqHBdXx9vx3bdHdXbkJ3Qkt0M1lfMVRTMlMwRE12Q0E&single=true&gid=0&output=csv' -O db/data/photos.csv
 wget 'https://docs.google.com/spreadsheet/pub?key=0AqHBdXx9vx3bdE5OUkZwZXFOU2dfcUtydGI5Tk1DaXc&single=true&gid=0&output=csv' -O db/data/carousel.csv
 wget 'https://docs.google.com/spreadsheet/pub?key=0AqHBdXx9vx3bdFNPY1F0NWdxdUV5LUl4OHNhRTZnWVE&single=true&gid=0&output=csv' -O db/data/events.csv
+wget 'https://docs.google.com/spreadsheet/pub?key=0AqHBdXx9vx3bdFRTYUxaSm5SRFdKSHlGSDlWLTU1bUE&output=csv' -O db/data/terms.csv
+bundle exec rake db:terms
 bundle exec rake db:members
 bundle exec rake db:albums
 bundle exec rake db:events

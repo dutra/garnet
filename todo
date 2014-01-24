@@ -1,2 +1,5 @@
 * Associate events with terms
 * Create 'events#show' view
+* Associate albums with terms
+* Fix albums index layout - Done
+* Dynamic buttons of term in index members
