@@ -52,12 +52,39 @@
   <div class="row">
     <div class="span6">
       <h3 class="title-box">Recent News</h3>
-
+      <ul>
+        <li>Last Wednesday's Dessert Night was great! Thanks for everyone who came and especially our amazing fenway chefs!</li>
+      </ul>
     </div>
 
 
     <div class="span6">
-      <h3 class="title-box">Lastest video</h3>
+      <h3 class="title-box">Upcoming Event</h3>
+      <div class="row">
+        <div class="span6">
+	  <% if @last_event.datetime.future? %>
+	  <% event = @last_event %>
+          <%= link_to event.album do %>
+          <div class="row event img-rounded">
+            <div class="span2">
+              <%= image_tag event.file.url(:thumb), class: "img-rounded" %>
+            </div>
+            <div class="span4">
+              <h3> <%= event.title %> <span class="lead">(<%= event.datetime.strftime("%A, %b %d, %Y - %l:%M%P") %>)</span> </h3>
+              <p class="description">
+                <%= event.description %>
+              </p>
+            </div>
+          </div>
+          <% end %>
+
+	  <% else %>
+	  Sorry, but there are no upcoming events in the near future. Keep checking!
+	  <% end %>
+	  
+        </div>
+      </div>
+
     </div>
 
   </div>

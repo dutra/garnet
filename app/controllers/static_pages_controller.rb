@@ -1,11 +1,11 @@
 class StaticPagesController < ApplicationController
   def home
-    @carousels = Carousel.all.reverse
+    @carousels = Carousel.all
+    @last_event = Event.last
   end
 
   def about
   end
-
 
   def contact
     if params[:message].present?
@@ -13,8 +13,6 @@ class StaticPagesController < ApplicationController
       flash[:success] = "Email successfully sent!"
       redirect_to '/contact'
     end
-
-    
   end
 
   
