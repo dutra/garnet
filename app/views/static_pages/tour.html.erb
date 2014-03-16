@@ -57,38 +57,16 @@
 <!-- </div><\!-- End Header -\-> -->
 
 
-<div class="row">
-  <ul class="offset4 span8 nav nav-tabs">
-    <li class="active"><a href="#about" data-toggle="tab">About</a></li>
-    <li><a href="#first" data-toggle="tab">First Floor</a></li>
-    <li><a href="#second" data-toggle="tab">Second Floor</a></li>
-    <li><a href="#third" data-toggle="tab">Third Floor</a></li>
-    <li><a href="#fourth" data-toggle="tab">Fourth Floor</a></li>
-    <li><a href="#basement" data-toggle="tab">Basement</a></li>
-  </ul>
-</div>
-<div class="row">
-  <div class="span12">
-    <div class="tab-content">
-      <div class="tab-pane active" id="about">
-        <%= render partial: 'about_about', locals: {} %>
-      </div>
-      <div class="tab-pane" id="first">
-        <%= render partial: 'about_first_floor', locals: {} %>
-      </div>
-      <div class="tab-pane" id="second">
-        <%= render partial: 'about_second_floor', locals: {} %>
-      </div>
-      <div class="tab-pane" id="third">
-        <%= render partial: 'about_third_floor', locals: {} %>
-      </div>
-      <div class="tab-pane" id="fourth">
-        <%= render partial: 'about_fourth_floor', locals: {} %>
-      </div>
-      <div class="tab-pane" id="basement">
-        <%= render partial: 'about_basement', locals: {} %>
-      </div>
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#about" data-toggle="tab">About</a></li>
+  <li><a href="#tour" data-toggle="tab">Virtual Tour</a></li>
+</ul>
 
-    </div>
+<div class="tab-content">
+  <div class="tab-pane active" id="about">
+    <%= render partial: 'about_about', locals: {} %>
+  </div>
+  <div class="tab-pane" id="tour">
+    <%= render partial: 'about_tour', locals: {} %>
   </div>
 </div>
